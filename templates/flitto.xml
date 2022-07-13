@@ -1,23 +1,29 @@
 <templateSet group="flitto">
-  <template name="mvi_contract" value="import com.flitto.core.mvi.ViewEffect&#10;import com.flitto.core.mvi.ViewIntent&#10;import com.flitto.core.mvi.ViewState&#10;&#10;sealed interface $NAME$Intent : ViewIntent {&#10;&#10;}&#10;&#10;object $NAME$State : ViewState&#10;&#10;sealed interface $NAME$Effect : ViewEffect {&#10;&#10;}&#10;" description="" toReformat="true" toShortenFQNames="true">
+  <template name="mvi_contract" value="import com.flitto.core.mvi.ViewEffect&#10;import com.flitto.core.mvi.ViewIntent&#10;import com.flitto.core.mvi.ViewState&#10;&#10;sealed interface $NAME$Intent : ViewIntent {&#10;&#10;}&#10;&#10;object $NAME$State : ViewState&#10;&#10;sealed interface $NAME$Effect : ViewEffect {&#10;&#10;}&#10;" description="Flitto MVI Contract" toReformat="true" toShortenFQNames="true">
     <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="KOTLIN" value="true" />
     </context>
   </template>
-  <template name="mvi_fragment" value="import androidx.fragment.app.viewModels&#10;import com.flitto.core.mvi.MVIFragment&#10;import dagger.hilt.android.AndroidEntryPoint&#10;&#10;@AndroidEntryPoint&#10;class $NAME$ : MVIFragment&lt;Fragment$NAME$Binding, $NAME$Intent, $NAME$State, $NAME$Effect&gt;(&#10;    Fragment$NAME$Binding::inflate&#10;) {&#10;    override val title: String = &quot;&quot;&#10;    override val viewModel: $NAME$ViewModel by viewModels()&#10;    &#10;    override fun initView() = binding {&#10;    &#10;    }&#10;    &#10;    override fun processState(state: $NAME$State) = binding {&#10;    &#10;    }&#10;    &#10;    override fun processEffect(effect: $NAME$Effect) {&#10;    &#10;    }&#10;}&#10;" description="" toReformat="true" toShortenFQNames="true">
+  <template name="mvi_fragment" value="import androidx.fragment.app.viewModels&#10;import com.flitto.core.mvi.MVIFragment&#10;import dagger.hilt.android.AndroidEntryPoint&#10;&#10;@AndroidEntryPoint&#10;class $NAME$ : MVIFragment&lt;Fragment$NAME$Binding, $NAME$Intent, $NAME$State, $NAME$Effect&gt;(&#10;    Fragment$NAME$Binding::inflate&#10;) {&#10;    override val title: String = &quot;&quot;&#10;    override val viewModel: $NAME$ViewModel by viewModels()&#10;    &#10;    override fun initView() = binding {&#10;    &#10;    }&#10;    &#10;    override fun processState(state: $NAME$State) = binding {&#10;    &#10;    }&#10;    &#10;    override fun processEffect(effect: $NAME$Effect) {&#10;    &#10;    }&#10;}&#10;" description="Flitto MVI Fragment" toReformat="true" toShortenFQNames="true">
     <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="KOTLIN" value="true" />
     </context>
   </template>
-  <template name="mvi_viewmodel" value="import com.flitto.core.mvi.MVIViewModel&#10;import dagger.hilt.android.lifecycle.HiltViewModel&#10;import javax.inject.Inject&#10;&#10;@HiltViewModel&#10;class $NAME$ViewModel @Inject constructor(&#10;) : MVIViewModel&lt;$NAME$Intent, $NAME$State, $NAME$Effect&gt;() {&#10;    override fun createInitialState() = $NAME$State&#10;    &#10;    override suspend fun processIntent(intent: $NAME$Intent) {&#10;    &#10;    }&#10;}&#10;&#10;" description="" toReformat="true" toShortenFQNames="true">
+  <template name="mvi_viewmodel" value="import com.flitto.core.mvi.MVIViewModel&#10;import dagger.hilt.android.lifecycle.HiltViewModel&#10;import javax.inject.Inject&#10;&#10;@HiltViewModel&#10;class $NAME$ViewModel @Inject constructor(&#10;) : MVIViewModel&lt;$NAME$Intent, $NAME$State, $NAME$Effect&gt;() {&#10;    override fun createInitialState() = $NAME$State&#10;    &#10;    override suspend fun processIntent(intent: $NAME$Intent) {&#10;    &#10;    }&#10;}&#10;&#10;" description="Flitto MVI ViewModel" toReformat="true" toShortenFQNames="true">
     <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="KOTLIN" value="true" />
     </context>
   </template>
-  <template name="mapper_response" value="internal object $NAME$ResponseMapper : Mapper&lt;$NAME$Response, $NAME$&gt; {&#10;    override fun mapDomain(input: $NAME$Response) = input.run {&#10;&#10;    }&#10;}&#10;" toReformat="false" toShortenFQNames="true">
+  <template name="mapper_response" value="internal object $NAME$ResponseMapper : Mapper&lt;$NAME$Response, $NAME$&gt; {&#10;    override fun mapDomain(input: $NAME$Response) = input.run {&#10;&#10;    }&#10;}&#10;" description="Flitto Data -&gt; Domain Mapper" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="mvi_test" value="import com.flitto.core.mvi.ContainerHost&#10;import com.flitto.test.MainDispatcherRule&#10;import com.flitto.test.TestContainerHost&#10;import kotlinx.coroutines.ExperimentalCoroutinesApi&#10;import kotlinx.coroutines.test.UnconfinedTestDispatcher&#10;import kotlinx.coroutines.test.runTest&#10;import org.junit.Before&#10;import org.junit.Rule&#10;import org.junit.Test&#10;&#10;@OptIn(ExperimentalCoroutinesApi::class)&#10;class $NAME$ViewModelTest {&#10;    private lateinit var viewModel: $NAME$ViewModel&#10;    private lateinit var sut: TestContainerHost&lt;$NAME$Intent, $NAME$State, $NAME$Effect,&#10;            ContainerHost&lt;$NAME$Intent, $NAME$State, $NAME$Effect&gt;&gt;&#10;    @get:Rule&#10;    val mainDispatcherRule = MainDispatcherRule()&#10;    @Before&#10;    fun setUp() {&#10;    }&#10;    @Test&#10;    fun `temp`() = runTest {&#10;    }&#10;}&#10;" description="Flitto MVI Test Code" toReformat="false" toShortenFQNames="true">
     <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="KOTLIN" value="true" />
