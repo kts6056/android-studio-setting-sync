@@ -17,7 +17,7 @@
       <option name="KOTLIN" value="true" />
     </context>
   </template>
-  <template name="mapper_response" value="internal object $NAME$ResponseMapper : Mapper&lt;$NAME$Response, $NAME$&gt; {&#10;    override fun mapDomain(input: $NAME$Response) = input.run {&#10;&#10;    }&#10;}&#10;" description="Flitto Data -&gt; Domain Mapper" toReformat="false" toShortenFQNames="true">
+  <template name="mapper_response" value="internal object $NAME$ResponseMapper : Mapper&lt;$NAME$Response, $NAME$&gt; {&#10;    override fun mapDomain(input: $NAME$Response) = input.run {&#10;        $NAME$(&#10;            &#10;        )&#10;    }&#10;}&#10;" description="Flitto Data -&gt; Domain Mapper" toReformat="false" toShortenFQNames="true">
     <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="KOTLIN" value="true" />
