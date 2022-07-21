@@ -1,4 +1,16 @@
 <application>
+  <component name="AppStorage">
+    <option name="newTranslationDialogX" value="780" />
+    <option name="newTranslationDialogY" value="990" />
+    <histories>
+      <item value="rules" />
+    </histories>
+    <option name="languageScores">
+      <map>
+        <entry key="KOREAN" value="1" />
+      </map>
+    </option>
+  </component>
   <component name="Cache">
     <option name="lastTrimTime" value="1658108324379" />
   </component>
