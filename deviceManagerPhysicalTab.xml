@@ -1,0 +1,28 @@
+<application>
+  <component name="deviceManagerPhysicalTab">
+    <physicalDevices>
+      <PhysicalDevice>
+        <key>
+          <Key>
+            <type value="SERIAL_NUMBER" />
+            <value value="R3CT101VGSH" />
+          </Key>
+        </key>
+        <name value="samsung SM-G991N" />
+        <target value="Android 12.0" />
+        <api value="31" />
+      </PhysicalDevice>
+      <PhysicalDevice>
+        <key>
+          <Key>
+            <type value="SERIAL_NUMBER" />
+            <value value="ce011601a1cabd3301" />
+          </Key>
+        </key>
+        <name value="samsung SM-G930L" />
+        <target value="Android 8.0" />
+        <api value="26" />
+      </PhysicalDevice>
+    </physicalDevices>
+  </component>
+</application>
